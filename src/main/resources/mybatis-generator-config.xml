@@ -52,5 +52,7 @@
         <!--生成对应表及类名-->
         <table tableName="userInfo" domainObjectName="UserInfo">
         </table>
+        <table tableName="account" domainObjectName="Account">
+        </table>
     </context>
 </generatorConfiguration>

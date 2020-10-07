@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8cb7e9a7-54ae-47b1-b873-e4af176b97a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yuepaijie/common/vo/RestEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yuepaijie/common/vo/requestparam/userInfoParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yuepaijie/controller/UserInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yuepaijie/dao/AccountMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yuepaijie/entity/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yuepaijie/entity/AccountExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/AccountMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/agreatprj-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/agreatprj-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/YuePaiJieApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/common/vo/RestEntity$RestEntityBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/common/vo/RestEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/controller/HelloController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/controller/UserInfoController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/controller/homePage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/dao/UserInfoMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/entity/UserInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/entity/UserInfoExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/entity/UserInfoExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/entity/UserInfoExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yuepaijie/entity/UserInfoExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/UserInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mybatis-generator-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/welcome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.yuepaijie.YuePaiJieTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.yuepaijie.YuePaiJieTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/yuepaijie/YuePaiJieTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yuepaijie/dao/UserInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yuepaijie/dao/UserInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yuepaijie/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yuepaijie/entity/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yuepaijie/entity/UserInfoExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yuepaijie/entity/UserInfoExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/UserInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/UserInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-generator-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-generator-config.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$USER_HOME$/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1iVeMjRXKmaLs8fAl2yEs2CX1MH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/com" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.YuePaiJieApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Mybatis Generator" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="YuePaiJieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuepaijie.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yuepaijie.YuePaiJieApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Maven.Mybatis Generator" />
+      <item itemvalue="Spring Boot.YuePaiJieApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.YuePaiJieApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8cb7e9a7-54ae-47b1-b873-e4af176b97a9" name="Default Changelist" comment="" />
+      <created>1601997143308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601997143308</updated>
+      <workItem from="1601997144997" duration="1747000" />
+      <workItem from="1602034639807" duration="3006000" />
+      <workItem from="1602061113741" duration="2792000" />
+      <workItem from="1602070363776" duration="1029000" />
+      <workItem from="1602071496357" duration="4325000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1602070600927</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602070600927</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="112" width="1205" height="748" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602062851095">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="184" y="112" width="1205" height="748" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1602062851095" />
+    <state x="449" y="190" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602062382823">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="449" y="190" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1602062382823" />
+    <state x="170" y="44" key="CommitChangelistDialog2" timestamp="1602070600716">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="170" y="44" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1602070600716" />
+    <state width="1398" height="299" key="GridCell.Tab.0.bottom" timestamp="1602075899619">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="299" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1602075899619" />
+    <state width="1398" height="270" key="GridCell.Tab.0.bottom/0.23.1440.838@0.23.1440.838" timestamp="1602049620093" />
+    <state width="1398" height="299" key="GridCell.Tab.0.center" timestamp="1602075899617">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="299" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1602075899617" />
+    <state width="1398" height="270" key="GridCell.Tab.0.center/0.23.1440.838@0.23.1440.838" timestamp="1602049620089" />
+    <state width="1398" height="299" key="GridCell.Tab.0.left" timestamp="1602075899616">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="299" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1602075899616" />
+    <state width="1398" height="270" key="GridCell.Tab.0.left/0.23.1440.838@0.23.1440.838" timestamp="1602049620087" />
+    <state width="1398" height="299" key="GridCell.Tab.0.right" timestamp="1602075899618">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="299" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1602075899618" />
+    <state width="1398" height="270" key="GridCell.Tab.0.right/0.23.1440.838@0.23.1440.838" timestamp="1602049620091" />
+    <state width="1162" height="368" key="GridCell.Tab.1.bottom" timestamp="1602075799841">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1162" height="368" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1602075799841" />
+    <state width="1162" height="368" key="GridCell.Tab.1.center" timestamp="1602075799840">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1162" height="368" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1602075799840" />
+    <state width="1162" height="368" key="GridCell.Tab.1.left" timestamp="1602075799840">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1162" height="368" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1602075799840" />
+    <state width="1162" height="368" key="GridCell.Tab.1.right" timestamp="1602075799841">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1162" height="368" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1602075799841" />
+    <state width="1162" height="368" key="GridCell.Tab.2.bottom" timestamp="1602075799843">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1162" height="368" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1602075799843" />
+    <state width="1162" height="368" key="GridCell.Tab.2.center" timestamp="1602075799842">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1162" height="368" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1602075799842" />
+    <state width="1162" height="368" key="GridCell.Tab.2.left" timestamp="1602075799842">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1162" height="368" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1602075799842" />
+    <state width="1162" height="368" key="GridCell.Tab.2.right" timestamp="1602075799843">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1162" height="368" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1602075799843" />
+    <state x="371" y="159" key="RollbackChangesDialog" timestamp="1602062418176">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="371" y="159" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1602062418176" />
+    <state x="0" y="23" width="1440" height="838" key="SettingsEditor" timestamp="1602074176219">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="23" width="1440" height="838" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1602074176219" />
+    <state x="400" y="190" key="Vcs.Push.Dialog.v2" timestamp="1602070613998">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="400" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1602070613998" />
+    <state x="507" y="235" key="chooseDestDirectoryDialog" timestamp="1602062705886">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="507" y="235" key="chooseDestDirectoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1602062705886" />
+  </component>
+</project>

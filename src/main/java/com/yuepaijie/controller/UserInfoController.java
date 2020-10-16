@@ -2,7 +2,7 @@ package com.yuepaijie.controller;
 
 
 import com.yuepaijie.common.entity.generated.UserAccount;
-import com.yuepaijie.common.vo.RestEntity;
+import com.yuepaijie.common.obj.vo.RestEntity;
 import com.yuepaijie.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -25,7 +25,7 @@ public class ImgFileController {
      * @return
      */
     @PostMapping(value = "/upload")
-    public RestEntity upload(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
+    public RestEntity upload(@RequestParam(value="file",required=false) MultipartFile file, HttpServletRequest request) {
         return imgFileService.saveImgFile(file, request);
     }
 }

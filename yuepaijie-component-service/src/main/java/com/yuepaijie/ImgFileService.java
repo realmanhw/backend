@@ -21,9 +21,12 @@ public class ImgFileService {
         if (!file.isEmpty()) {
             try {
                 //图片命名
-                String newCompanyImageName = "newPIC";
-                String newCompanyImagepath = filePath+newCompanyImageName;
+                String newCompanyImageName = file.getOriginalFilename();
+                String newCompanyImagepath = filePath+newCompanyImageName+"1.png";
                 File newFile = new File(newCompanyImagepath);
+                if(!newFile.getParentFile().exists()) {
+                    newFile.getParentFile().mkdirs();
+                }
                 if (!newFile.exists()) {
                     newFile.createNewFile();
                 }

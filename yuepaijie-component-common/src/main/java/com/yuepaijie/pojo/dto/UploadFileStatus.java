@@ -1,4 +1,4 @@
-package com.yuepaijie.obj.dto;
+package com.yuepaijie.pojo.dto;
 
 import java.io.FileInputStream;
 import java.io.InputStream;

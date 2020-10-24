@@ -1,7 +1,7 @@
-package com.yuepaijie.usercontroller;
+package com.yuepaijie.controller;
 
-import com.yuepaijie.ImgFileService;
-import com.yuepaijie.obj.vo.RestEntity;
+import com.yuepaijie.service.ImgFileService;
+import com.yuepaijie.pojo.vo.RestEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

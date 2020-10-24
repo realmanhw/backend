@@ -1,6 +1,6 @@
 package com.yuepaijie.tool.http;
 
-import com.yuepaijie.obj.dto.UploadFileStatus;
+import com.yuepaijie.pojo.dto.UploadFileStatus;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

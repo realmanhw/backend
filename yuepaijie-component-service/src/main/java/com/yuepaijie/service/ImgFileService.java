@@ -1,6 +1,6 @@
-package com.yuepaijie;
+package com.yuepaijie.service;
 
-import com.yuepaijie.obj.vo.RestEntity;
+import com.yuepaijie.pojo.vo.RestEntity;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
@@ -37,13 +37,13 @@ public class ImgFileService {
                 out.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-                return new RestEntity(400,"图片上传失败");
+                return new RestEntity(400,"file not found");
             } catch (IOException e) {
                 e.printStackTrace();
-                return new RestEntity(400,"图片上传失败");
+                return new RestEntity(400,"failed");
             }
         }
-        return new RestEntity(400,"图片上传失败");
+        return new RestEntity(400,"success");
 
     }
 }

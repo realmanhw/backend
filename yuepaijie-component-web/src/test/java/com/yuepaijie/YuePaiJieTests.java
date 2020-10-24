@@ -1,7 +1,8 @@
 package com.yuepaijie;
 
 
-import com.yuepaijie.entity.generated.UserAccount;
+import com.yuepaijie.pojo.entity.generated.UserAccount;
+import com.yuepaijie.service.UserInfoService;
 import com.yuepaijie.tool.redis.RedisOperator;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

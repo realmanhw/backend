@@ -2,6 +2,7 @@ package com.yuepaijie.config;
 
 import com.yuepaijie.dao.generated.UserAccountMapper;
 import com.yuepaijie.secirity.AuthFilter;
+import com.yuepaijie.secirity.AuthenticationStore;
 import com.yuepaijie.secirity.LogoutFilter;
 import com.yuepaijie.secirity.UsernamePasswordAuthenticationFilter;
 import com.yuepaijie.secirity.UsernamePasswordAuthenticationProvider;
@@ -25,6 +26,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Resource
   UserAccountMapper userAccountMapper;
+
+  @Autowired
+  private AuthenticationStore authenticationStore;
 
   @Autowired
   private UsernamePasswordAuthenticationProvider usernamePasswordAuthenticationProvider;
@@ -60,7 +64,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   }
 
   private UsernamePasswordAuthenticationFilter usernamePasswordAuthenticationFilter() throws Exception {
-    UsernamePasswordAuthenticationFilter filter = new UsernamePasswordAuthenticationFilter(userAccountMapper);
+    UsernamePasswordAuthenticationFilter filter = new UsernamePasswordAuthenticationFilter(userAccountMapper,authenticationStore);
     filter.setAuthenticationManager(authenticationManagerBean());
     return filter;
   }

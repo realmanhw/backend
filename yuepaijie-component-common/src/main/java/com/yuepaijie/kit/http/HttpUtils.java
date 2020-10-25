@@ -1,4 +1,4 @@
-package com.yuepaijie.tool.http;
+package com.yuepaijie.kit.http;
 
 import com.yuepaijie.pojo.dto.UploadFileStatus;
 

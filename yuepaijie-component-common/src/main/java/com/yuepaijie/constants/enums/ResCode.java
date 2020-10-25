@@ -1,4 +1,4 @@
-package com.yuepaijie.pojo.enums;
+package com.yuepaijie.constants.enums;
 
 import lombok.Getter;
 

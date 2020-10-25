@@ -1,4 +1,4 @@
-package com.yuepaijie.tool;
+package com.yuepaijie.kit;
 
 import java.text.ParseException;
 import java.text.ParsePosition;

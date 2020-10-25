@@ -3,7 +3,7 @@ package com.yuepaijie.controller;
 
 import com.mysql.cj.util.StringUtils;
 import com.yuepaijie.pojo.entity.generated.UserAccount;
-import com.yuepaijie.pojo.enums.ResCode;
+import com.yuepaijie.constants.enums.ResCode;
 import com.yuepaijie.service.UserInfoService;
 import com.yuepaijie.pojo.vo.RestEntity;
 import org.springframework.beans.factory.annotation.Autowired;

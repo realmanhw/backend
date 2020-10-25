@@ -15,3 +15,18 @@ spring:
     password: LvLeEG9bI4aUwfOZ
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
+redis:
+  host: 8.210.157.161
+  port: 6379
+  password: LvLeEG9bI4aUwfOZ
+  pool:
+    max-idle: 20
+    max-total: 100
+    max-wait: 3000
+  test-on-borrow: true
+  use-sentinel: false
+  database: 16
+  timeout: 3000
+esop:
+  auth:
+    timeoutMinute: 90

@@ -1,10 +1,11 @@
 package com.yuepaijie.service;
 
 import com.mysql.cj.util.StringUtils;
+import java.util.Optional;
 import com.yuepaijie.dao.generated.UserAccountMapper;
 import com.yuepaijie.pojo.entity.generated.UserAccount;
 import com.yuepaijie.pojo.entity.generated.UserAccountExample;
-import com.yuepaijie.tool.TimeUtils;
+import com.yuepaijie.kit.TimeUtils;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -97,5 +98,25 @@ public class UserInfoService {
     userAccountExample.createCriteria().andIdEqualTo(exist.getId());
     int res = userAccountMapper.updateByExampleSelective(userAccount, userAccountExample);
     return res != 0;
+  }
+
+  public Optional<UserAccount> checkPassword(String account, String password) {
+    if (StringUtils.isNullOrEmpty(account)) {
+      return Optional.empty();
+    }
+    if (StringUtils.isNullOrEmpty(password)) {
+      return Optional.empty();
+    }
+    UserAccountExample userAccountExample = new UserAccountExample();
+    userAccountExample.createCriteria().andAccountEqualTo(account).andPasswordEqualTo(password);
+    List<UserAccount> exists = userAccountMapper.selectByExample(userAccountExample);
+    if (CollectionUtils.isEmpty(exists)) {
+      return Optional.empty();
+    }
+    if (exists.size() > 1) {
+      log.error("同样账户的用户数量大于1个,account:" + account);
+      return Optional.empty();
+    }
+    return Optional.ofNullable(exists.get(0));
   }
 }

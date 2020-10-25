@@ -24,7 +24,6 @@ public abstract class BaseAuthenticationFilter extends AbstractAuthenticationPro
   }
 
   protected void setResponse(HttpServletResponse response, RestEntity restEntity) throws IOException {
-    //response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
     response.getWriter().write(objectMapper.writeValueAsString(restEntity));
   }
 

@@ -3,7 +3,10 @@ package com.yuepaijie;
 
 import com.yuepaijie.pojo.entity.generated.UserAccount;
 import com.yuepaijie.service.UserInfoService;
-import com.yuepaijie.tool.redis.RedisOperator;
+import com.yuepaijie.kit.redis.RedisOperator;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +37,12 @@ class YuePaiJieTests {
         userAccount.setPassword("1");
         userAccount.setName("1");
         userInfoService.addOrModify(userAccount);
+    }
+
+    @Test
+    void testOptional(){
+        List<Integer> list = new ArrayList<>();
+        Optional.ofNullable(list).orElse(null).get(0);
     }
 
 }

@@ -48,7 +48,7 @@ public class AuthFilter extends OncePerRequestFilter {
 
       SecurityContextHolder.getContext().setAuthentication(null);
     } else {
-      response.getWriter().write(new ObjectMapper().writeValueAsString(new RestEntity(ResCode.BAD_REQUEST.getStatus(),"未登录")));
+      response.getWriter().write(new ObjectMapper().writeValueAsString(new RestEntity(ResCode.BAD_REQUEST.getStatus(),"Had not log in")));
     }
   }
 

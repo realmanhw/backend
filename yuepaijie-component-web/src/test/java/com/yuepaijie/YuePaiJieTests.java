@@ -1,6 +1,7 @@
 package com.yuepaijie;
 
 
+import com.yuepaijie.kit.redis.RedisKit;
 import com.yuepaijie.pojo.entity.generated.UserAccount;
 import com.yuepaijie.service.UserInfoService;
 import com.yuepaijie.kit.redis.RedisOperator;
@@ -21,6 +22,9 @@ class YuePaiJieTests {
     RedisOperator redisOperator;
 
     @Autowired
+    RedisKit redisKit;
+
+    @Autowired
     UserInfoService userInfoService;
 
     @Test
@@ -28,6 +32,12 @@ class YuePaiJieTests {
         redisOperator.set("11","22",10);
         Thread.sleep(500);
         System.out.println(redisOperator.get("11"));
+    }
+
+    @Test
+    void testRedis2() throws Exception{
+        redisKit.setex("11",10,"22");
+        System.out.println(redisKit.get("11"));
     }
 
     @Test

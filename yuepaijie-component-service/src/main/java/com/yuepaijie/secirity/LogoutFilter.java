@@ -48,6 +48,6 @@ public class LogoutFilter extends BaseAuthenticationFilter {
     String token = AuthUtils.getToken(request);
     authenticationStore.removeByTicket(token);
     redisKit.del(RedisKeys.AUTHENTICATOR_TOKEN_KEY + token);
-    setResponse(response, new RestEntity(ResCode.SUCCESS.getStatus(),"注销成功"));
+    setResponse(response, new RestEntity(ResCode.SUCCESS.getStatus(),"log out success"));
   }
 }

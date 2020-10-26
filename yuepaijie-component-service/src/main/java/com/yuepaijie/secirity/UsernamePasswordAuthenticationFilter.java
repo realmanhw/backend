@@ -36,7 +36,7 @@ public class UsernamePasswordAuthenticationFilter extends BaseAuthenticationFilt
       HttpServletResponse response) throws AuthenticationException, IOException {
     LoginParam loginParam = parseLoginParam(request);
     String account = loginParam.getAccount();
-    String password = loginParam.getPwd();
+    String password = loginParam.getPassword();
 
     if (StringUtils.isEmpty(account) || StringUtils.isEmpty(password)) {
       throw new BadCredentialsException("Empty account or password");

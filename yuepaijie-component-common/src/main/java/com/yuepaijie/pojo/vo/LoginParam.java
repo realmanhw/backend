@@ -7,5 +7,5 @@ import lombok.Data;
  */
 @Data
 public class LoginParam {
-    private String account, pwd;
+    private String account, password;
 }

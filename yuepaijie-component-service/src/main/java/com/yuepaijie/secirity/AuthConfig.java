@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-@ConfigurationProperties(prefix = "esop.auth")
+@ConfigurationProperties(prefix = "yuepaijie.auth")
 public class AuthConfig {
 
   private int timeoutMinute;

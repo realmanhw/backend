@@ -1,6 +1,7 @@
 package com.yuepaijie.config;
 
 import com.yuepaijie.dao.generated.UserAccountMapper;
+import com.yuepaijie.kit.redis.RedisKit;
 import com.yuepaijie.secirity.AuthFilter;
 import com.yuepaijie.secirity.AuthenticationStore;
 import com.yuepaijie.secirity.LogoutFilter;
@@ -24,8 +25,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   private static final String[] WHITELIST = new String[]{};
 
+  @Autowired
+  private RedisKit redisKit;
+
   @Resource
-  UserAccountMapper userAccountMapper;
+  private UserAccountMapper userAccountMapper;
 
   @Autowired
   private AuthenticationStore authenticationStore;
@@ -70,12 +74,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   }
 
   private LogoutFilter logoutFilter() throws Exception {
-    LogoutFilter filter = new LogoutFilter();
+    LogoutFilter filter = new LogoutFilter(authenticationStore, redisKit);
     filter.setAuthenticationManager(authenticationManagerBean());
     return filter;
   }
 
   private AuthFilter authFilter() {
-    return new AuthFilter(WHITELIST);
+    return new AuthFilter(WHITELIST,authenticationStore);
   }
 }

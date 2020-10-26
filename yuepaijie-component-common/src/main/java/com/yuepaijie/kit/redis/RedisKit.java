@@ -24,7 +24,7 @@ public class RedisKit {
   /**
    * 分布式锁的key前缀
    */
-  private final String KEY_LOCK = "esop:lock:";
+  private final String KEY_LOCK = "yuepaijie:lock:";
   /**
    * 分布式锁失效时间 单位秒
    */

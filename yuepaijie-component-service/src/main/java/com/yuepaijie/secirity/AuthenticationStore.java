@@ -26,14 +26,14 @@ public class AuthenticationStore {
 
   /**
    * 存储格式：
-   * 所有信息的 Key 均以 esop_auth 开头，与其他数据隔离，包含以下两种：
-   * 1. 授权信息：esop_auth:user_detail:{ticket}
+   * 所有信息的 Key 均以 yuepaijie_auth 开头，与其他数据隔离，包含以下两种：
+   * 1. 授权信息：yuepaijie_auth:user_detail:{ticket}
    * 使用 string 进行存储，使用带标记的 json 进行存储
-   * 2. username 与 ticket 对应关系：esop_auth:user_ticket_dict
+   * 2. username 与 ticket 对应关系：yuepaijie_auth:user_ticket_dict
    * 使用 hashList 进行存储，username -> ticket
    *
    * PS：清除缓存的命令
-   * eval "return redis.call('del', unpack(redis.call('keys', 'esop_auth*')))" 0
+   * eval "return redis.call('del', unpack(redis.call('keys', 'yuepaijie_auth*')))" 0
    */
 
   /**

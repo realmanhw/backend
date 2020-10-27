@@ -2,6 +2,8 @@ package com.yuepaijie.controller;
 
 import com.yuepaijie.service.ImgFileService;
 import com.yuepaijie.pojo.vo.RestEntity;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 
+@Api(tags = "文件-Controller")
 @RestController
 @RequestMapping("/imgFile")
 public class ImgFileController {
@@ -24,6 +27,7 @@ public class ImgFileController {
      * @param request
      * @return
      */
+    @ApiOperation(value = "接收上传的文件，并且将上传的文件存储在指定路径下")
     @PostMapping(value = "/upload")
     public RestEntity upload(@RequestParam(value="file",required=false) MultipartFile file, HttpServletRequest request) {
         return imgFileService.saveImgFile(file, request);

@@ -23,7 +23,17 @@ import org.springframework.security.web.firewall.StrictHttpFirewall;
 @EnableGlobalMethodSecurity(jsr250Enabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-  private static final String[] WHITELIST = new String[]{};
+  private static final String[] WHITELIST = new String[]{
+      //所有url都能通过
+      "/**",
+      //用户注册接口
+      "/userInfo/signUp",
+      //swagger相关接口
+      "/swagger-ui.html",
+      "/v2/api-docs",
+      "/webjars/**",
+      "/swagger-resources/**"
+  };
 
   @Autowired
   private RedisKit redisKit;

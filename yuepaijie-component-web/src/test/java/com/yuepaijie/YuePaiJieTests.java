@@ -4,7 +4,6 @@ package com.yuepaijie;
 import com.yuepaijie.kit.redis.RedisKit;
 import com.yuepaijie.pojo.entity.generated.UserAccount;
 import com.yuepaijie.service.UserInfoService;
-import com.yuepaijie.kit.redis.RedisOperator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -19,20 +18,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 class YuePaiJieTests {
 
     @Autowired
-    RedisOperator redisOperator;
-
-    @Autowired
     RedisKit redisKit;
 
     @Autowired
     UserInfoService userInfoService;
-
-    @Test
-    void testRedis() throws Exception{
-        redisOperator.set("11","22",10);
-        Thread.sleep(500);
-        System.out.println(redisOperator.get("11"));
-    }
 
     @Test
     void testRedis2() throws Exception{

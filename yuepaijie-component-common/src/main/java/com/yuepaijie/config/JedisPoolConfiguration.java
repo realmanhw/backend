@@ -31,7 +31,7 @@ public class JedisPoolConfiguration {
     RedisConfig.Pool pool = redisConfig.getPool();
     jedisPoolConfig.setMaxTotal(pool.getMaxTotal());
     jedisPoolConfig.setMaxIdle(pool.getMaxIdle());
-    jedisPoolConfig.setMaxWaitMillis(pool.getMaxWait());
+    jedisPoolConfig.setMaxWaitMillis(pool.getMaxWaitMillis());
     jedisPoolConfig.setTestOnBorrow(redisConfig.getTestOnBorrow());
 
     if (redisConfig.getUseSentinel()) {

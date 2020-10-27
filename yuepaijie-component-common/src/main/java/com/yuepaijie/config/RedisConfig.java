@@ -44,6 +44,6 @@ public class RedisConfig {
 
     private Integer maxIdle;
 
-    private Long maxWait;
+    private Long maxWaitMillis;
   }
 }

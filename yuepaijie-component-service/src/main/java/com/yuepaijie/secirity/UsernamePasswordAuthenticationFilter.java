@@ -1,7 +1,6 @@
 package com.yuepaijie.secirity;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.yuepaijie.dao.generated.UserAccountMapper;
 import com.yuepaijie.constants.enums.ResCode;
 import com.yuepaijie.model.vo.LoginParam;
 import com.yuepaijie.model.vo.RestEntity;
@@ -22,12 +21,10 @@ import org.springframework.util.StringUtils;
 
 public class UsernamePasswordAuthenticationFilter extends BaseAuthenticationFilter {
 
-  private final UserAccountMapper userAccountMapper;
   private final AuthenticationStore authenticationStore;
 
-  public UsernamePasswordAuthenticationFilter(UserAccountMapper userAccountMapper, AuthenticationStore authenticationStore) {
+  public UsernamePasswordAuthenticationFilter(AuthenticationStore authenticationStore) {
     super(new AntPathRequestMatcher("/auth/login", "POST"));
-    this.userAccountMapper = userAccountMapper;
     this.authenticationStore = authenticationStore;
   }
 

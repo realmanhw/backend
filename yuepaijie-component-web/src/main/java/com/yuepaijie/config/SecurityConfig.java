@@ -1,13 +1,11 @@
 package com.yuepaijie.config;
 
-import com.yuepaijie.dao.generated.UserAccountMapper;
 import com.yuepaijie.kit.redis.RedisKit;
 import com.yuepaijie.secirity.AuthFilter;
 import com.yuepaijie.secirity.AuthenticationStore;
 import com.yuepaijie.secirity.LogoutFilter;
 import com.yuepaijie.secirity.UsernamePasswordAuthenticationFilter;
 import com.yuepaijie.secirity.UsernamePasswordAuthenticationProvider;
-import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -37,9 +35,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Autowired
   private RedisKit redisKit;
-
-  @Resource
-  private UserAccountMapper userAccountMapper;
 
   @Autowired
   private AuthenticationStore authenticationStore;
@@ -78,7 +73,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   }
 
   private UsernamePasswordAuthenticationFilter usernamePasswordAuthenticationFilter() throws Exception {
-    UsernamePasswordAuthenticationFilter filter = new UsernamePasswordAuthenticationFilter(userAccountMapper,authenticationStore);
+    UsernamePasswordAuthenticationFilter filter = new UsernamePasswordAuthenticationFilter(authenticationStore);
     filter.setAuthenticationManager(authenticationManagerBean());
     return filter;
   }

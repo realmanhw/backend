@@ -3,7 +3,7 @@ package com.yuepaijie.secirity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.yuepaijie.pojo.vo.RestEntity;
+import com.yuepaijie.model.vo.RestEntity;
 import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;

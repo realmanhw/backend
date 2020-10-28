@@ -6,7 +6,7 @@ import lombok.Getter;
 public enum  ResCode {
   //
   BAD_REQUEST(400, "请求失败"),
-  //
+
   SUCCESS(200, "请求成功")
   ;
 

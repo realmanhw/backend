@@ -1,4 +1,4 @@
-package com.yuepaijie.pojo.dto;
+package com.yuepaijie.model.dto;
 
 import java.io.FileInputStream;
 import java.io.InputStream;

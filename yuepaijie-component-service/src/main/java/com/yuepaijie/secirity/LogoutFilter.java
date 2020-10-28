@@ -3,7 +3,7 @@ package com.yuepaijie.secirity;
 import com.yuepaijie.constants.RedisKeys;
 import com.yuepaijie.constants.enums.ResCode;
 import com.yuepaijie.kit.redis.RedisKit;
-import com.yuepaijie.pojo.vo.RestEntity;
+import com.yuepaijie.model.vo.RestEntity;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;

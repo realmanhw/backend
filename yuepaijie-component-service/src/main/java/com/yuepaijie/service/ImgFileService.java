@@ -1,6 +1,6 @@
 package com.yuepaijie.service;
 
-import com.yuepaijie.pojo.vo.RestEntity;
+import com.yuepaijie.model.vo.RestEntity;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;

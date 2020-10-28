@@ -1,10 +1,10 @@
 package com.yuepaijie.controller;
 
 import com.mysql.cj.util.StringUtils;
-import com.yuepaijie.pojo.entity.generated.UserAccount;
+import com.yuepaijie.model.entity.generated.UserAccount;
 import com.yuepaijie.constants.enums.ResCode;
 import com.yuepaijie.service.UserInfoService;
-import com.yuepaijie.pojo.vo.RestEntity;
+import com.yuepaijie.model.vo.RestEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

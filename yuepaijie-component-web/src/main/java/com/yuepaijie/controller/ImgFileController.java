@@ -1,7 +1,7 @@
 package com.yuepaijie.controller;
 
 import com.yuepaijie.service.ImgFileService;
-import com.yuepaijie.pojo.vo.RestEntity;
+import com.yuepaijie.model.vo.RestEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

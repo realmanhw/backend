@@ -1,7 +1,7 @@
-package com.yuepaijie.pojo.vo;
+package com.yuepaijie.model.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.yuepaijie.pojo.entity.generated.UserAccount;
+import com.yuepaijie.model.entity.generated.UserAccount;
 import java.util.Date;
 import lombok.Data;
 import lombok.NoArgsConstructor;

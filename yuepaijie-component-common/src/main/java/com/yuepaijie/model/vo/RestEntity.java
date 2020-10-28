@@ -1,4 +1,4 @@
-package com.yuepaijie.pojo.vo;
+package com.yuepaijie.model.vo;
 
 import lombok.Data;
 

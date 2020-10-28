@@ -23,7 +23,7 @@
         <!-- targetPackage：生成的实体类所在的包 -->
         <!-- targetProject：生成的实体类所在的硬盘位置 -->
         <!-- DataObject 类存放位置 -->
-        <javaModelGenerator targetPackage="com.yuepaijie.pojo.entity.generated"
+        <javaModelGenerator targetPackage="com.yuepaijie.model.entity.generated"
                             targetProject="./src/main/java">
             <!-- 是否允许子包 -->
             <property name="enableSubPackages" value="false" />

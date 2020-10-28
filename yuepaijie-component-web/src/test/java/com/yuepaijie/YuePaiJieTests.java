@@ -2,7 +2,7 @@ package com.yuepaijie;
 
 
 import com.yuepaijie.kit.redis.RedisKit;
-import com.yuepaijie.pojo.entity.generated.UserAccount;
+import com.yuepaijie.model.entity.generated.UserAccount;
 import com.yuepaijie.service.UserInfoService;
 import java.util.ArrayList;
 import java.util.List;

@@ -2,7 +2,7 @@ package com.yuepaijie.secirity;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yuepaijie.constants.enums.ResCode;
-import com.yuepaijie.pojo.vo.RestEntity;
+import com.yuepaijie.model.vo.RestEntity;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

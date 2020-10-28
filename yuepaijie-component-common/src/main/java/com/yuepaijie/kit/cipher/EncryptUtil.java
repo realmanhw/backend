@@ -12,6 +12,10 @@ import java.security.MessageDigest;
 import java.security.SecureRandom;
 
 public class EncryptUtil {
+
+  /**用来加密的秘钥,需要传入秘钥的时候用**/
+  public static final String KEY = "Sq4vCQep0Or9rVFz00zxIQeXYp23gtLZ";
+
   public static final String MD5 = "MD5";
   public static final String SHA1 = "SHA1";
   public static final String HmacMD5 = "HmacMD5";

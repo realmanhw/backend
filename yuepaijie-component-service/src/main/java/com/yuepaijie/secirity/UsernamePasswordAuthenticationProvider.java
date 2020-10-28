@@ -1,7 +1,7 @@
 package com.yuepaijie.secirity;
 
-import com.yuepaijie.pojo.entity.generated.UserAccount;
-import com.yuepaijie.pojo.vo.UserLoginAccountDetail;
+import com.yuepaijie.model.entity.generated.UserAccount;
+import com.yuepaijie.model.vo.UserLoginAccountDetail;
 import com.yuepaijie.service.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

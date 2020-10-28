@@ -1,7 +1,7 @@
 package com.yuepaijie.dao.generated;
 
-import com.yuepaijie.pojo.entity.generated.UserAccount;
-import com.yuepaijie.pojo.entity.generated.UserAccountExample;
+import com.yuepaijie.model.entity.generated.UserAccount;
+import com.yuepaijie.model.entity.generated.UserAccountExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,4 +1,4 @@
-package com.yuepaijie.pojo.entity.generated;
+package com.yuepaijie.model.entity.generated;
 
 import java.util.Date;
 

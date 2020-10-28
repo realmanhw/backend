@@ -1,6 +1,6 @@
 package com.yuepaijie.secirity;
 
-import com.yuepaijie.pojo.vo.UserLoginAccountDetail;
+import com.yuepaijie.model.vo.UserLoginAccountDetail;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

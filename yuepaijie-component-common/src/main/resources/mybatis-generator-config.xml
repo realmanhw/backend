@@ -15,7 +15,7 @@
         <!--这里是以变量的形式定义，具体的值在 application.properties 文件中-->
         <!--jdbc:mysql://localhost:3306/数据库名?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC-->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://8.210.157.161:3306/yuepaijie?useSSL=false"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/yuepaijie?allowPublicKeyRetrieval=true"
                         userId="root"
                         password="root">
         </jdbcConnection>
@@ -50,6 +50,7 @@
         </javaClientGenerator>
 
         <!--生成对应表及类名-->
-        <table tableName="userAccount" domainObjectName="UserAccount"></table>
+        <table tableName="users" domainObjectName="Users"></table>
+        <table tableName="user_auths" domainObjectName="UserAuths"></table>
     </context>
 </generatorConfiguration>

@@ -8,7 +8,6 @@ import com.yuepaijie.dao.interfaces.UserDao;
 import com.yuepaijie.model.entity.generated.User;
 import com.yuepaijie.model.entity.generated.UserAuth;
 import java.util.List;
-import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

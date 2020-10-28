@@ -32,6 +32,7 @@ public class UserDaoImpl implements UserDao {
       }
     }
     user.setNickname(user.getNickname().trim());
+    user.setId(null);
     user.setCreatetime(TimeUtils.getNow());
     user.setUpdatetime(TimeUtils.getNow());
     return userMapper.insertSelective(user);

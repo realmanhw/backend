@@ -50,7 +50,15 @@
         </javaClientGenerator>
 
         <!--生成对应表及类名-->
-        <table tableName="users" domainObjectName="Users"></table>
-        <table tableName="user_auths" domainObjectName="UserAuths"></table>
+        <table tableName="user" domainObjectName="User">
+            <!--插入返回主键-->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="user_auth" domainObjectName="UserAuth">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="counter" domainObjectName="Counter">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
     </context>
 </generatorConfiguration>

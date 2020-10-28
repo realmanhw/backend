@@ -1,8 +1,11 @@
 package com.yuepaijie.controller;
 
 import com.mysql.cj.util.StringUtils;
-import com.yuepaijie.model.entity.generated.UserAccount;
+import com.yuepaijie.kit.StringKit;
+import com.yuepaijie.model.dto.UserParam;
+import com.yuepaijie.model.entity.generated.User;
 import com.yuepaijie.constants.enums.ResCode;
+import com.yuepaijie.model.entity.generated.UserAuth;
 import com.yuepaijie.service.UserInfoService;
 import com.yuepaijie.model.vo.RestEntity;
 import io.swagger.annotations.Api;
@@ -22,21 +25,31 @@ public class UserInfoController {
   @Autowired
   UserInfoService userInfoService;
 
-  @ApiOperation(value = "用户注册", notes = "必须传昵称、账户名称、密码")
+  @ApiOperation(value = "用户注册", notes = "必须传-账户名称、密码、登录方式")
   @PostMapping("/signUp")
   public RestEntity signUp(
-      @ApiParam(name = "userAccount", value = "注册实体：必须传昵称、账户名称、密码", required = true)
-      @RequestBody UserAccount userAccount) {
-    if (StringUtils.isNullOrEmpty(userAccount.getNickname())) {
-      return new RestEntity(ResCode.BAD_REQUEST.getStatus(), "需要昵称");
+      @ApiParam(name = "userParam", value = "注册实体：账户名称、密码、登录方式", required = true)
+      @RequestBody UserParam userParam) {
+    User user = userParam.getUser();
+    UserAuth userAuth = userParam.getUserAuth();
+    if(user == null || userAuth == null){
+      return new RestEntity(ResCode.PARAMETER_ERROR.getStatus(), ResCode.PARAMETER_ERROR.getDesc());
     }
-    if (StringUtils.isNullOrEmpty(userAccount.getAccount())) {
-      return new RestEntity(ResCode.BAD_REQUEST.getStatus(), "需要账户名称");
+    if (StringUtils.isNullOrEmpty(userAuth.getIdentifier())) {
+      return new RestEntity(ResCode.PARAMETER_ERROR.getStatus(), "需要账户名称");
     }
-    if (StringUtils.isNullOrEmpty(userAccount.getPassword())) {
-      return new RestEntity(ResCode.BAD_REQUEST.getStatus(), "需要密码");
+    if (StringUtils.isNullOrEmpty(userAuth.getCredential())) {
+      return new RestEntity(ResCode.PARAMETER_ERROR.getStatus(), "需要密码");
     }
-    Boolean flag = userInfoService.addUserAccount(userAccount);
+    if (StringUtils.isNullOrEmpty(userAuth.getIdentityType())) {
+      return new RestEntity(ResCode.PARAMETER_ERROR.getStatus(), "需要登录方式");
+    }
+    if (!StringUtils.isNullOrEmpty(user.getNickname())) {
+      if(StringKit.containsSpecialChar(user.getNickname().trim())){
+        return new RestEntity(ResCode.PARAMETER_ERROR.getStatus(), "昵称不能包含特殊字符");
+      }
+    }
+    Boolean flag = userInfoService.signUp(user,userAuth);
     if (!flag) {
       return new RestEntity(ResCode.BAD_REQUEST.getStatus(), "注册失败");
     }

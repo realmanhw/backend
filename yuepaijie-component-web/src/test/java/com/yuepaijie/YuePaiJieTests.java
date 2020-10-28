@@ -2,7 +2,6 @@ package com.yuepaijie;
 
 
 import com.yuepaijie.kit.redis.RedisKit;
-import com.yuepaijie.model.entity.generated.UserAccount;
 import com.yuepaijie.service.UserInfoService;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,15 +26,6 @@ class YuePaiJieTests {
     void testRedis2() throws Exception{
         redisKit.setex("11",10,"22");
         System.out.println(redisKit.get("11"));
-    }
-
-    @Test
-    void testMybatis() throws Exception{
-        UserAccount userAccount = new UserAccount();
-        userAccount.setAccount("1");
-        userAccount.setPassword("1");
-        userAccount.setName("1");
-        userInfoService.addOrModify(userAccount);
     }
 
     @Test

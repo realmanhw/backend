@@ -1,21 +1,34 @@
 package com.yuepaijie.constants.enums;
 
+import java.util.HashSet;
+import java.util.Set;
+import lombok.Getter;
+
+@Getter
 public enum IdentityType {
   //
-  BAD_REQUEST(0, "账号密码登录"),
+  ACCOUNT_PWD("account_pwd", "账号密码登录"),
 
-  EMAIL(1, "邮箱登录"),
+  EMAIL("email", "邮箱登录"),
 
-  WE_CHAT(3, "微信登录"),
+  WE_CHAT("wechat", "微信登录"),
 
-  WE_BLOG(4, "微博登录")
+  WE_BLOG("weblog", "微博登录")
   ;
 
-  private final Integer status;
+  private final String status;
   private final String desc;
 
-  IdentityType(Integer status, String desc) {
+  IdentityType(String status, String desc) {
     this.status = status;
     this.desc = desc;
+  }
+
+  public static Set<String> getAllStatus(){
+    Set<String> set = new HashSet<>();
+    for(IdentityType type : values() ){
+      set.add(type.getStatus());
+    }
+    return set;
   }
 }

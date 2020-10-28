@@ -1,6 +1,7 @@
 package com.yuepaijie.secirity;
 
-import com.yuepaijie.model.entity.generated.UserAccount;
+import com.yuepaijie.constants.enums.IdentityType;
+import com.yuepaijie.model.entity.generated.UserAuth;
 import com.yuepaijie.model.vo.UserLoginAccountDetail;
 import com.yuepaijie.service.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
@@ -26,11 +27,11 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
   public Authentication authenticate(Authentication auth) throws AuthenticationException {
     String account = (String) auth.getPrincipal();
     String password = (String) auth.getCredentials();
-    UserAccount userAccount = userInfoService.checkPassword(account,password).orElse(null);
-    if(userAccount == null){
+    UserAuth userAuth = userInfoService.checkPassword(account,password, IdentityType.ACCOUNT_PWD.getStatus());
+    if(userAuth == null){
       throw new AuthenticationServiceException("登录失败");
     }
-    return authenticate(userAccount);
+    return authenticate(userAuth);
   }
 
   @Override
@@ -38,10 +39,11 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
     return authentication == UsernamePasswordAuthenticationToken.class;
   }
 
-  private Authentication authenticate(UserAccount userAccount){
+  private Authentication authenticate(UserAuth userAuth){
     UserLoginAccountDetail userLoginAccountDetail = new UserLoginAccountDetail();
-    userLoginAccountDetail.setId(userAccount.getId());
-    userLoginAccountDetail.setAccount(userAccount.getAccount());
+    userLoginAccountDetail.setId(userAuth.getId());
+    userLoginAccountDetail.setIdentifier(userAuth.getIdentifier());
+    userLoginAccountDetail.setIdentityType(userAuth.getIdentityType());
     return createAuth(userLoginAccountDetail);
   }
 

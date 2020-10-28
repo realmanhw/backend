@@ -3,12 +3,13 @@ package com.yuepaijie.constants.enums;
 import lombok.Getter;
 
 @Getter
-public enum  ResCode {
+public enum ResCode {
   //
-  BAD_REQUEST(400, "请求失败"),
+  BAD_REQUEST(0, "请求失败"),
 
-  SUCCESS(200, "请求成功")
-  ;
+  SUCCESS(1, "请求成功"),
+
+  PARAMETER_ERROR(2, "参数错误");;
 
   private final Integer status;
   private final String desc;

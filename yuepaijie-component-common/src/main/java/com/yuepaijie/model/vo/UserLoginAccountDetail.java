@@ -1,7 +1,7 @@
 package com.yuepaijie.model.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.yuepaijie.model.entity.generated.UserAccount;
+import com.yuepaijie.model.entity.generated.UserAuth;
 import java.util.Date;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +12,8 @@ import org.springframework.beans.BeanUtils;
 public class UserLoginAccountDetail {
 
   private Long id;
-  private String account;
+  private String identifier;
+  private String identityType;
   private String name;
   private String token;
   private boolean isAdmin;
@@ -30,10 +31,9 @@ public class UserLoginAccountDetail {
   // */
   //private LoginType currentLoginType;
 
-  public UserLoginAccountDetail(UserAccount account, UserLoginAccountDetail detail) {
+  public UserLoginAccountDetail(UserAuth userAuth, UserLoginAccountDetail detail) {
     BeanUtils.copyProperties(detail, this);
-
-    this.setId(account.getId());
-    this.setCreateTime(account.getCreatetime());
+    this.setId(userAuth.getId());
+    this.setCreateTime(userAuth.getCreatetime());
   }
 }

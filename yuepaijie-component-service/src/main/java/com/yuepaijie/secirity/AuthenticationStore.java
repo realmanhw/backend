@@ -4,9 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yuepaijie.constants.exceptions.AuthStoreException;
-import com.yuepaijie.dao.UserAccountDao;
+import com.yuepaijie.dao.interfaces.UserAuthDao;
 import com.yuepaijie.kit.redis.RedisKit;
-import com.yuepaijie.model.entity.generated.UserAccount;
+import com.yuepaijie.model.entity.generated.UserAuth;
 import com.yuepaijie.model.vo.UserLoginAccountDetail;
 import com.yuepaijie.service.UserInfoService;
 import java.io.IOException;
@@ -48,10 +48,7 @@ public class AuthenticationStore {
   private RedisKit redisKit;
 
   @Autowired
-  private UserAccountDao userAccountDao;
-
-  @Autowired
-  private UserInfoService userInfoService;
+  private UserAuthDao userAuthDao;
 
   public AuthenticationStore() {
     mapper.configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, false);
@@ -127,9 +124,9 @@ public class AuthenticationStore {
     }
 
     UserLoginAccountDetail detail = loadDetail(ticket, false);
-    UserAccount loginAccount = userAccountDao.getUserAccountById(loginAccountId);
+    UserAuth userAuth = userAuthDao.getById(loginAccountId);
 
-    UserLoginAccountDetail updated = new UserLoginAccountDetail(loginAccount, detail);
+    UserLoginAccountDetail updated = new UserLoginAccountDetail(userAuth, detail);
 
     refreshDetail(ticket, updated);
   }

@@ -1,4 +1,4 @@
-package com.yuepaijie.dao;
+package com.yuepaijie.dao.interfaces;
 
 import java.util.List;
 import java.util.Optional;

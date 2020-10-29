@@ -6,7 +6,6 @@ import com.yuepaijie.dao.interfaces.UserDao;
 import com.yuepaijie.kit.TimeUtils;
 import com.yuepaijie.model.entity.generated.User;
 import com.yuepaijie.model.entity.generated.UserExample;
-import java.util.List;
 import java.util.UUID;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Repository;

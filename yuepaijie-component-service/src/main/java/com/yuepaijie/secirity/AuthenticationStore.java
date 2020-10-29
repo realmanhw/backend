@@ -8,7 +8,6 @@ import com.yuepaijie.dao.interfaces.UserAuthDao;
 import com.yuepaijie.kit.redis.RedisKit;
 import com.yuepaijie.model.entity.generated.UserAuth;
 import com.yuepaijie.model.vo.UserLoginAccountDetail;
-import com.yuepaijie.service.UserInfoService;
 import java.io.IOException;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;

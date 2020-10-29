@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.ArrayUtils;
+import org.springframework.http.MediaType;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -48,7 +49,8 @@ public class AuthFilter extends OncePerRequestFilter {
 
       SecurityContextHolder.getContext().setAuthentication(null);
     } else {
-      response.getWriter().write(new ObjectMapper().writeValueAsString(new RestEntity(ResCode.BAD_REQUEST.getStatus(),"Had not log in")));
+      response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
+      response.getWriter().write(new ObjectMapper().writeValueAsString(new RestEntity(ResCode.BAD_REQUEST.getStatus(),"未登录")));
     }
   }
 

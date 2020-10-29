@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yuepaijie.constants.exceptions.AuthStoreException;
-import com.yuepaijie.dao.interfaces.UserAuthDao;
+import com.yuepaijie.dao.impls.UserAuthDaoImpl;
 import com.yuepaijie.kit.redis.RedisKit;
 import com.yuepaijie.model.entity.generated.UserAuth;
 import com.yuepaijie.model.vo.UserLoginAccountDetail;
@@ -47,7 +47,7 @@ public class AuthenticationStore {
   private RedisKit redisKit;
 
   @Autowired
-  private UserAuthDao userAuthDao;
+  private UserAuthDaoImpl userAuthDao;
 
   public AuthenticationStore() {
     mapper.configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, false);

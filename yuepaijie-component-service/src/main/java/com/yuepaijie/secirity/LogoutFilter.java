@@ -9,6 +9,7 @@ import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -48,6 +49,7 @@ public class LogoutFilter extends BaseAuthenticationFilter {
     String token = AuthUtils.getToken(request);
     authenticationStore.removeByTicket(token);
     redisKit.del(RedisKeys.AUTHENTICATOR_TOKEN_KEY + token);
-    setResponse(response, new RestEntity(ResCode.SUCCESS.getStatus(),"log out success"));
+    response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
+    setResponse(response, new RestEntity(ResCode.SUCCESS.getStatus(),"注销成功"));
   }
 }

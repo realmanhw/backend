@@ -3,8 +3,8 @@ package com.yuepaijie.service;
 import com.alibaba.fastjson.JSON;
 import com.mysql.cj.util.StringUtils;
 import com.yuepaijie.constants.enums.IdentityType;
-import com.yuepaijie.dao.interfaces.UserAuthDao;
-import com.yuepaijie.dao.interfaces.UserDao;
+import com.yuepaijie.dao.impls.UserAuthDaoImpl;
+import com.yuepaijie.dao.impls.UserDaoImpl;
 import com.yuepaijie.model.entity.generated.User;
 import com.yuepaijie.model.entity.generated.UserAuth;
 import java.util.List;
@@ -17,9 +17,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class UserInfoService {
 
-  @Autowired UserAuthDao userAuthDao;
+  @Autowired UserAuthDaoImpl userAuthDao;
 
-  @Autowired UserDao userDao;
+  @Autowired UserDaoImpl userDao;
 
   @Transactional
   public Boolean signUp(User user, UserAuth userAuth) {

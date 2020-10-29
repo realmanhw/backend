@@ -3,7 +3,7 @@ package com.yuepaijie.dao.impls;
 import com.yuepaijie.dao.generated.UserAuthMapper;
 import com.yuepaijie.dao.interfaces.UserAuthDao;
 import com.yuepaijie.kit.TimeUtils;
-import com.yuepaijie.kit.encryption.EncryptUtil;
+import com.yuepaijie.kit.encryption.CredentialUtils;
 import com.yuepaijie.model.entity.generated.UserAuth;
 import com.yuepaijie.model.entity.generated.UserAuthExample;
 import java.util.List;
@@ -19,7 +19,7 @@ public class UserAuthDaoImpl implements UserAuthDao {
   public Integer insertSelective(UserAuth userAuth) {
     userAuth.setIdentifier(userAuth.getIdentifier().trim());
     String credential = userAuth.getCredential().trim();
-    userAuth.setCredential(EncryptUtil.PasswordEncode(credential));
+    userAuth.setCredential(CredentialUtils.credentialEncode(credential));
     userAuth.setCreatetime(TimeUtils.getNow());
     userAuth.setUpdatetime(TimeUtils.getNow());
     return userAuthMapper.insertSelective(userAuth);

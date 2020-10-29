@@ -7,11 +7,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserAuthDao extends DaoHelper {
 
-  public Integer insertSelective(UserAuth userAuth);
+  Integer insertSelective(UserAuth userAuth);
 
-  public List<UserAuth> getByIdentifierAndIdentityType(String Identifier, String identityType);
+  List<UserAuth> getByIdentifierAndIdentityType(String Identifier, String identityType);
 
-  public UserAuth checkPassword(String Identifier, String credential, String identityType);
+  UserAuth checkPassword(String Identifier, String credential, String identityType);
 
-  public UserAuth getById(Long id);
+  UserAuth getById(Long id);
 }

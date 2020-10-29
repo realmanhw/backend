@@ -22,8 +22,8 @@ import org.springframework.security.web.firewall.StrictHttpFirewall;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   private static final String[] WHITELIST = new String[]{
-      //所有url都能通过
-      "/**",
+      ////所有url都能通过
+      //"/**",
       //用户注册接口
       "/userInfo/signUp",
       //swagger相关接口

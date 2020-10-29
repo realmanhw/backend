@@ -1,4 +1,4 @@
-package com.yuepaijie.kit.http;
+package com.yuepaijie.kit.thirdparty.http;
 
 import com.yuepaijie.model.dto.UploadFileStatus;
 

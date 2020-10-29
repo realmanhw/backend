@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.yuepaijie.model.vo.RestEntity;
 import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.util.matcher.RequestMatcher;
@@ -24,6 +25,7 @@ public abstract class BaseAuthenticationFilter extends AbstractAuthenticationPro
   }
 
   protected void setResponse(HttpServletResponse response, RestEntity restEntity) throws IOException {
+    response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
     response.getWriter().write(objectMapper.writeValueAsString(restEntity));
   }
 

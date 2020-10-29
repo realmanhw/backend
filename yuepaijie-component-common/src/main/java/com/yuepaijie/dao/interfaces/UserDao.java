@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao extends DaoHelper {
 
-  public Integer insertSelectiveAutoGenerateNickname(User user);
+  Integer insertSelectiveAutoGenerateNickname(User user);
 
-  public User getUserByNickName(String nickname);
+  User getUserByNickName(String nickname);
 }

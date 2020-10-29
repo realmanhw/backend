@@ -1,5 +1,6 @@
 package com.yuepaijie.service;
 
+import com.yuepaijie.constants.enums.Status;
 import com.yuepaijie.model.vo.RestEntity;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -37,13 +38,13 @@ public class ImgFileService {
                 out.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-                return new RestEntity(400,"file not found");
+                return RestEntity.error(Status.FAILED.getStatus(),"文件未找到");
             } catch (IOException e) {
                 e.printStackTrace();
-                return new RestEntity(400,"failed");
+                return RestEntity.error(Status.FAILED);
             }
         }
-        return new RestEntity(400,"success");
+        return RestEntity.ok();
 
     }
 }

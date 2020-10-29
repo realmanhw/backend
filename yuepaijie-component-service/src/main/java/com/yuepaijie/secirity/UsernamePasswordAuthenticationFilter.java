@@ -1,7 +1,7 @@
 package com.yuepaijie.secirity;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.yuepaijie.constants.enums.ResCode;
+import com.yuepaijie.constants.enums.Status;
 import com.yuepaijie.model.vo.LoginParam;
 import com.yuepaijie.model.vo.RestEntity;
 import com.yuepaijie.model.vo.UserLoginAccountDetail;
@@ -54,7 +54,7 @@ public class UsernamePasswordAuthenticationFilter extends BaseAuthenticationFilt
     String token = authenticationStore.addAuthentication(auth);
     UserLoginAccountDetail detail = (UserLoginAccountDetail) auth.getDetails();
     detail.setToken(token);
-    setResponse(res, new RestEntity(ResCode.SUCCESS.getStatus(),token));
+    setResponse(res, RestEntity.ok(token));
   }
 
   @Override
@@ -63,9 +63,9 @@ public class UsernamePasswordAuthenticationFilter extends BaseAuthenticationFilt
       throws IOException {
     RestEntity res = null;
     if (failed instanceof AuthenticationServiceException) {
-      res = new RestEntity(ResCode.BAD_REQUEST.getStatus(),"登录验证失败");
+      res = RestEntity.error(Status.FAILED.getStatus(),"登录验证失败");
     } else {
-      res = new RestEntity(ResCode.BAD_REQUEST.getStatus(),"登录异常");
+      res = RestEntity.error(Status.FAILED.getStatus(),"登录异常");
     }
     setResponse(response, res);
   }

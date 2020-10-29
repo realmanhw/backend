@@ -1,4 +1,4 @@
-package com.yuepaijie.config;
+package com.yuepaijie.annoservice;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

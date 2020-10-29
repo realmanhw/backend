@@ -1,7 +1,7 @@
 package com.yuepaijie.secirity;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.yuepaijie.constants.enums.ResCode;
+import com.yuepaijie.constants.enums.Status;
 import com.yuepaijie.model.vo.RestEntity;
 import java.io.IOException;
 import javax.servlet.FilterChain;
@@ -50,7 +50,7 @@ public class AuthFilter extends OncePerRequestFilter {
       SecurityContextHolder.getContext().setAuthentication(null);
     } else {
       response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
-      response.getWriter().write(new ObjectMapper().writeValueAsString(new RestEntity(ResCode.BAD_REQUEST.getStatus(),"未登录")));
+      response.getWriter().write(new ObjectMapper().writeValueAsString(RestEntity.error(Status.NEED_LOGIN)));
     }
   }
 

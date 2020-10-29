@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.google.common.base.Charsets;
+import com.yuepaijie.annoservice.CamelStyle;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;

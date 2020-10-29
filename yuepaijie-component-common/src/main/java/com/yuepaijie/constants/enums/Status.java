@@ -3,18 +3,20 @@ package com.yuepaijie.constants.enums;
 import lombok.Getter;
 
 @Getter
-public enum ResCode {
+public enum Status {
   //
-  BAD_REQUEST(0, "请求失败"),
+  SUCCESS(0, "成功"),
 
-  SUCCESS(1, "请求成功"),
+  FAILED(1,"失败"),
 
-  PARAMETER_ERROR(2, "参数错误");;
+  NEED_LOGIN(2,"未登录"),
+
+  PARAMETER_ERROR(3, "参数错误");
 
   private final Integer status;
   private final String desc;
 
-  ResCode(Integer status, String desc) {
+  Status(Integer status, String desc) {
     this.status = status;
     this.desc = desc;
   }

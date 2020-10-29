@@ -1,7 +1,7 @@
 package com.yuepaijie.secirity;
 
 import com.yuepaijie.constants.RedisKeys;
-import com.yuepaijie.constants.enums.ResCode;
+import com.yuepaijie.constants.enums.Status;
 import com.yuepaijie.kit.redis.RedisKit;
 import com.yuepaijie.model.vo.RestEntity;
 import java.io.IOException;
@@ -50,6 +50,6 @@ public class LogoutFilter extends BaseAuthenticationFilter {
     authenticationStore.removeByTicket(token);
     redisKit.del(RedisKeys.AUTHENTICATOR_TOKEN_KEY + token);
     response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
-    setResponse(response, new RestEntity(ResCode.SUCCESS.getStatus(),"注销成功"));
+    setResponse(response, RestEntity.ok());
   }
 }

@@ -40,7 +40,7 @@ public class UserAuthDaoImpl implements UserAuthDao {
     UserAuthExample example = new UserAuthExample();
     example.createCriteria()
         .andIdentifierEqualTo(identifier.trim())
-        .andCredentialEqualTo(credential.trim())
+        .andCredentialEqualTo(CredentialUtils.credentialEncode(credential.trim()))
         .andIdentityTypeEqualTo(identityType.trim());
     return firstOrNull(userAuthMapper.selectByExample(example));
   }

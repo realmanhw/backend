@@ -91,8 +91,8 @@ public class AuthenticationStore {
         }
         if (detail != null) {
           log.warn("Token has expired, remove the relationship between loginAccountId[{}] and ticket[{}]",
-              detail.getId(), ticket);
-          removeByLoginAccountId(detail.getId().toString());
+              detail.getUserAuthId(), ticket);
+          removeByLoginAccountId(detail.getUserAuthId().toString());
         }
       }
     }
@@ -141,7 +141,7 @@ public class AuthenticationStore {
       log.error("saveDetail error. token:{}", ticket);
       throw new IllegalStateException();
     }
-    log.info("Save User[accountId={}] login details, token={}", detail.getId(), ticket);
+    log.info("Save User[accountId={}] login details, token={}", detail.getUserAuthId(), ticket);
   }
 
   private void refreshDetail(String ticket, UserLoginAccountDetail detail) {
@@ -254,7 +254,7 @@ public class AuthenticationStore {
     try {
       json = mapper.writeValueAsString(detail);
     } catch (JsonProcessingException e) {
-      log.error("User[accountId={}, userId={}] information serialization failed", detail.getId(), detail.getUserId());
+      log.error("User[accountId={}, userId={}] information serialization failed", detail.getUserAuthId(), detail.getUserId());
       throw new RuntimeException(e);
     }
     return prefix + ':' + json;

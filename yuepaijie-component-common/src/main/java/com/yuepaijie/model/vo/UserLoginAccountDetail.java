@@ -11,20 +11,20 @@ import org.springframework.beans.BeanUtils;
 @NoArgsConstructor
 public class UserLoginAccountDetail {
 
-  private Long id;
+  private Long userId;
+  //登录账户Id
+  private Long userAuthId;
+  //账户名称
   private String identifier;
+  //登录方式
   private String identityType;
+  private boolean isAdmin;
   private String name;
   private String token;
-  private boolean isAdmin;
   private String language;
-  private Long userId;
   private String userType;
   private Date createTime;
   private Date updateTime;
-  @JsonIgnore
-  private String ipWhiteList;
-  private Integer loginType;
 
   ///**
   // * 本次登录所使用的登录方式
@@ -33,7 +33,7 @@ public class UserLoginAccountDetail {
 
   public UserLoginAccountDetail(UserAuth userAuth, UserLoginAccountDetail detail) {
     BeanUtils.copyProperties(detail, this);
-    this.setId(userAuth.getId());
+    this.setUserAuthId(userAuth.getId());
     this.setCreateTime(userAuth.getCreatetime());
   }
 }

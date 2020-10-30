@@ -50,10 +50,10 @@ public class UsernamePasswordAuthenticationFilter extends BaseAuthenticationFilt
   @Override
   protected void successfulAuthentication(HttpServletRequest req,
       HttpServletResponse res, FilterChain chain, Authentication auth) throws IOException {
-    SecurityContextHolder.getContext().setAuthentication(auth);
     String token = authenticationStore.addAuthentication(auth);
     UserLoginAccountDetail detail = (UserLoginAccountDetail) auth.getDetails();
     detail.setToken(token);
+    SecurityContextHolder.getContext().setAuthentication(auth);
     setResponse(res, RestEntity.ok(token));
   }
 

@@ -4,11 +4,12 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 
 public class CommonAuthenticatedToken extends AbstractAuthenticationToken {
 
-  private final Long loginAccountId;
+  //登录账户Id
+  private final Long userAuthId;
 
   public CommonAuthenticatedToken(final Long loginAccountId) {
     super(null);
-    this.loginAccountId = loginAccountId;
+    this.userAuthId = loginAccountId;
 
     super.setAuthenticated(true);
   }
@@ -20,6 +21,6 @@ public class CommonAuthenticatedToken extends AbstractAuthenticationToken {
 
   @Override
   public Object getPrincipal() {
-    return loginAccountId;
+    return userAuthId;
   }
 }

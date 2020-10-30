@@ -41,14 +41,14 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
 
   private Authentication authenticate(UserAuth userAuth){
     UserLoginAccountDetail userLoginAccountDetail = new UserLoginAccountDetail();
-    userLoginAccountDetail.setId(userAuth.getId());
+    userLoginAccountDetail.setUserAuthId(userAuth.getId());
     userLoginAccountDetail.setIdentifier(userAuth.getIdentifier());
     userLoginAccountDetail.setIdentityType(userAuth.getIdentityType());
     return createAuth(userLoginAccountDetail);
   }
 
   private Authentication createAuth(UserLoginAccountDetail detail) {
-    CommonAuthenticatedToken token = new CommonAuthenticatedToken(detail.getId());
+    CommonAuthenticatedToken token = new CommonAuthenticatedToken(detail.getUserAuthId());
     token.setDetails(detail);
     return token;
   }

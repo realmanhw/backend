@@ -4,6 +4,7 @@ import com.yuepaijie.kit.redis.RedisKit;
 import com.yuepaijie.secirity.AuthFilter;
 import com.yuepaijie.secirity.AuthenticationStore;
 import com.yuepaijie.secirity.LogoutFilter;
+import com.yuepaijie.secirity.ParamsFilter;
 import com.yuepaijie.secirity.UsernamePasswordAuthenticationFilter;
 import com.yuepaijie.secirity.UsernamePasswordAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     Class<org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter>
         clz = org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class;
 
-    http.addFilterBefore(usernamePasswordAuthenticationFilter(), clz)
+    http.addFilterBefore(paramsFilter(),clz)
+        .addFilterBefore(usernamePasswordAuthenticationFilter(), clz)
         .addFilterBefore(logoutFilter(), clz)
         .addFilterBefore(authFilter(), clz);
   }
@@ -70,6 +72,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //url中允许分号
     firewall.setAllowSemicolon(true);
     return firewall;
+  }
+
+  private ParamsFilter paramsFilter(){
+    return new ParamsFilter();
   }
 
   private UsernamePasswordAuthenticationFilter usernamePasswordAuthenticationFilter() throws Exception {

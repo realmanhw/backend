@@ -1,4 +1,4 @@
-package com.yuepaijie.secirity;
+package com.yuepaijie.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yuepaijie.constants.enums.Status;

@@ -1,12 +1,12 @@
 package com.yuepaijie.config;
 
 import com.yuepaijie.kit.redis.RedisKit;
-import com.yuepaijie.secirity.AuthFilter;
-import com.yuepaijie.secirity.AuthenticationStore;
-import com.yuepaijie.secirity.LogoutFilter;
-import com.yuepaijie.secirity.ParamsFilter;
-import com.yuepaijie.secirity.UsernamePasswordAuthenticationFilter;
-import com.yuepaijie.secirity.UsernamePasswordAuthenticationProvider;
+import com.yuepaijie.security.AuthFilter;
+import com.yuepaijie.security.AuthenticationStore;
+import com.yuepaijie.security.LogoutFilter;
+import com.yuepaijie.security.ParamsFilter;
+import com.yuepaijie.security.UsernamePasswordAuthenticationFilter;
+import com.yuepaijie.security.UsernamePasswordAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

@@ -1,7 +1,6 @@
-package com.yuepaijie.secirity;
+package com.yuepaijie.security;
 
 import com.yuepaijie.constants.RedisKeys;
-import com.yuepaijie.constants.enums.Status;
 import com.yuepaijie.kit.redis.RedisKit;
 import com.yuepaijie.model.vo.RestEntity;
 import java.io.IOException;

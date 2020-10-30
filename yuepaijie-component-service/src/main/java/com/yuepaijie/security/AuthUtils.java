@@ -1,4 +1,4 @@
-package com.yuepaijie.secirity;
+package com.yuepaijie.security;
 
 import com.yuepaijie.model.vo.UserLoginAccountDetail;
 import javax.servlet.http.HttpServletRequest;

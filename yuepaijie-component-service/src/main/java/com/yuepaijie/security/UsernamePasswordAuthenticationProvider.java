@@ -1,4 +1,4 @@
-package com.yuepaijie.secirity;
+package com.yuepaijie.security;
 
 import com.yuepaijie.constants.enums.IdentityType;
 import com.yuepaijie.model.entity.generated.UserAuth;

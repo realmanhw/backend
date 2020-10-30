@@ -1,4 +1,4 @@
-package com.yuepaijie.secirity;
+package com.yuepaijie.security;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 

@@ -2,6 +2,7 @@ package com.yuepaijie.config;
 
 import com.yuepaijie.kit.redis.RedisKit;
 import com.yuepaijie.security.AuthFilter;
+import com.yuepaijie.security.AuthOpenFilter;
 import com.yuepaijie.security.AuthenticationStore;
 import com.yuepaijie.security.LogoutFilter;
 import com.yuepaijie.security.ParamsFilter;
@@ -22,9 +23,9 @@ import org.springframework.security.web.firewall.StrictHttpFirewall;
 @EnableGlobalMethodSecurity(jsr250Enabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-  private static final String[] WHITELIST = new String[]{
+  private static final String[] WHITELIST = new String[] {
       ////所有url都能通过
-      //"/**",
+      "/**",
       //用户注册接口
       "/userInfo/signUp",
       //swagger相关接口
@@ -50,10 +51,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     Class<org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter>
         clz = org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class;
 
-    http.addFilterBefore(paramsFilter(),clz)
+    http.addFilterBefore(paramsFilter(), clz)
         .addFilterBefore(usernamePasswordAuthenticationFilter(), clz)
         .addFilterBefore(logoutFilter(), clz)
-        .addFilterBefore(authFilter(), clz);
+        // 这个是封闭式登录控制器，仅适合后台管理系统，先不用，注释掉
+        // .addFilterBefore(authFilter(), clz)
+        .addFilterBefore(authOpenFilter(), clz);
   }
 
   @Override
@@ -74,7 +77,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     return firewall;
   }
 
-  private ParamsFilter paramsFilter(){
+  private ParamsFilter paramsFilter() {
     return new ParamsFilter();
   }
 
@@ -90,7 +93,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     return filter;
   }
 
+  /**
+   * 封闭式登录控制过滤器，仅白名单中url可放行，适合后台管理系统，登录了才能使用，这里先不用
+   *
+   * @return
+   */
   private AuthFilter authFilter() {
-    return new AuthFilter(WHITELIST,authenticationStore);
+    return new AuthFilter(WHITELIST, authenticationStore);
+  }
+
+  /**
+   * 开放式登录控制过滤器，请求都放行，但仅为登录者分配了身份，适合开放式社区网站
+   */
+  private AuthOpenFilter authOpenFilter() {
+    return new AuthOpenFilter(authenticationStore);
   }
 }

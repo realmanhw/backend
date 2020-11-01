@@ -53,6 +53,6 @@ public class UserInfoController {
     if (!flag) {
       return RestEntity.error(Status.FAILED.getStatus(), "注册失败");
     }
-    return RestEntity.ok(Status.SUCCESS.getStatus());
+    return RestEntity.ok();
   }
 }

@@ -18,13 +18,13 @@ public class UserDaoImpl implements UserDao {
   @Override
   public Integer insertSelectiveAutoGenerateNickname(User user) {
     if (user.getNickname() == null || StringUtils.isNullOrEmpty(user.getNickname().trim())) {
-      UUID uuid = UUID.randomUUID();
-      user.setNickname("yuepai" + uuid.toString());
+      String uuid = UUID.randomUUID().toString().replace("-", "");
+      user.setNickname("yuepai" + uuid);
     }
     int count = 10;
     while (getUserByNickName(user.getNickname().trim()) != null) {
-      UUID uuid = UUID.randomUUID();
-      user.setNickname("yuepai" + uuid.toString());
+      String uuid = UUID.randomUUID().toString().replace("-", "");
+      user.setNickname("yuepai" + uuid);
       count--;
       if (count < 0) {
         return 0;

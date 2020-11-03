@@ -1,0 +1,27 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    url: jdbc:mysql://rm-j6ctc8jia9jtw2b6q2o.mysql.rds.aliyuncs.com:3306/yuepaijie?useSSL=false
+    username: hw_root
+    password: HW!root01X
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password: LvLeEG9bI4aUwfOZ
+  pool:
+    max-total: 1000
+    max-idle: 200
+    max-wait-millis: 3000
+  test-on-borrow: true
+  use-sentinel: false
+  database: 0
+  timeout: 20000
+yuepaijie:
+  auth:
+    timeoutMinute: 90

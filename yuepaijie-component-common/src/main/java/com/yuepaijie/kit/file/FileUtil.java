@@ -4,11 +4,6 @@ import java.io.File;
 import java.util.UUID;
 import org.springframework.util.StringUtils;
 
-/**
- * @author haoxiuqing
- * @date 2020/9/6 11:38 上午
- */
-
 public class FileUtil {
 
   public static String generateUploadPath(String targetLocation, String name) {

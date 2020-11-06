@@ -1,6 +1,8 @@
 server:
   port: 8081
 spring:
+  profiles:
+    active: common
   datasource:
     url: jdbc:mysql://rm-j6ctc8jia9jtw2b6q2o.mysql.rds.aliyuncs.com:3306/yuepaijie?useSSL=false
     username: hw_root

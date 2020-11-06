@@ -1,5 +1,6 @@
 package com.yuepaijie.controller;
 
+import com.yuepaijie.kit.file.aliyunoss.AliyunOssFileClient;
 import com.yuepaijie.model.vo.RestEntity;
 import com.yuepaijie.model.vo.UserLoginAccountDetail;
 import com.yuepaijie.security.AuthUtils;
@@ -22,6 +23,8 @@ public class ImgFileController {
     @Autowired
     ImgFileService imgFileService;
 
+    //@Autowired AliyunOssFileClient aliyunOssFileClient;
+
     /**
      * 接收上传的文件，并且将上传的文件存储在指定路径下
      * @param file
@@ -31,9 +34,19 @@ public class ImgFileController {
     @ApiOperation(value = "接收上传的文件，并且将上传的文件存储在指定路径下")
     @PostMapping(value = "/upload")
     public RestEntity upload(@RequestParam(value="file",required=false) MultipartFile file, HttpServletRequest request) {
-        UserLoginAccountDetail userLoginAccountDetail = AuthUtils.getUser();
-        Long id = userLoginAccountDetail.getUserAuthId();
-        System.out.println(id);
+        //try{
+        //    aliyunOssFileClient.uploadPublic(file,"pub","1.png");
+        //    byte[] b = aliyunOssFileClient.downloadPublic(
+        //        "pub/4090accb-1be9-4413-8774-64f7d3d5b190.png");
+        //    b = null;
+        //}catch (Exception e){
+        //    System.out.println(e);
+        //}
         return imgFileService.saveImgFile(file, request);
     }
+
+    //@PostMapping(value = "/uploadImg")
+    //public RestEntity uploadImg(@RequestParam(value="file",required=false) MultipartFile file, HttpServletRequest request){
+    //    AuthUtils
+    //}
 }

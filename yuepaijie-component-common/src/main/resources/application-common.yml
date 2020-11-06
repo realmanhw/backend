@@ -1,0 +1,7 @@
+aliyun:
+  oss:
+    endPoint: oss-cn-hongkong.aliyuncs.com
+    accessKeyId: LTAI4FzizG9qX1NJgF4urzY3
+    accessKeySecret: FMzyCVhaWWh8qI5CevU9DMFfGHvcnN
+    bucketNamePublic: yuepaijie-public
+    bucketNamePrivate: yuepaijie-private

@@ -51,9 +51,6 @@ public class UsernamePasswordAuthenticationFilter extends BaseAuthenticationFilt
   protected void successfulAuthentication(HttpServletRequest req,
       HttpServletResponse res, FilterChain chain, Authentication auth) throws IOException {
     String token = authenticationStore.addAuthentication(auth);
-    UserLoginAccountDetail detail = (UserLoginAccountDetail) auth.getDetails();
-    detail.setToken(token);
-    SecurityContextHolder.getContext().setAuthentication(auth);
     setResponse(res, RestEntity.ok(token));
   }
 

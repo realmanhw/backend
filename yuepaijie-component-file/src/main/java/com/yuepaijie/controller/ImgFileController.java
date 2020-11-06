@@ -1,6 +1,5 @@
 package com.yuepaijie.controller;
 
-import com.yuepaijie.kit.file.aliyunoss.AliyunOssFileClient;
 import com.yuepaijie.model.vo.RestEntity;
 import com.yuepaijie.model.vo.UserLoginAccountDetail;
 import com.yuepaijie.security.AuthUtils;
@@ -42,6 +41,9 @@ public class ImgFileController {
         //}catch (Exception e){
         //    System.out.println(e);
         //}
+        UserLoginAccountDetail userLoginAccountDetail = AuthUtils.getUser();
+        Long id = userLoginAccountDetail.getUserAuthId();
+        System.out.println(id);
         return imgFileService.saveImgFile(file, request);
     }
 

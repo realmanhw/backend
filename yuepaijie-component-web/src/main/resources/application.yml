@@ -24,6 +24,3 @@ redis:
   use-sentinel: false
   database: 0
   timeout: 20000
-yuepaijie:
-  auth:
-    timeoutMinute: 90

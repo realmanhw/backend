@@ -1,3 +1,6 @@
+yuepaijie:
+  auth:
+    timeoutMinute: 90
 aliyun:
   oss:
     endPoint: oss-cn-hongkong.aliyuncs.com

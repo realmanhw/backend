@@ -41,6 +41,7 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
 
   private Authentication authenticate(UserAuth userAuth){
     UserLoginAccountDetail userLoginAccountDetail = new UserLoginAccountDetail();
+    userLoginAccountDetail.setUserId(userAuth.getUserId());
     userLoginAccountDetail.setUserAuthId(userAuth.getId());
     userLoginAccountDetail.setIdentifier(userAuth.getIdentifier());
     userLoginAccountDetail.setIdentityType(userAuth.getIdentityType());

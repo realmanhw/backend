@@ -1,4 +1,4 @@
-package com.yuepaijie.constants;
+package com.yuepaijie.constants.constvals;
 
 public class RedisKeys {
   public static final String PROJECT_PREFIX = "yuepaijie:";

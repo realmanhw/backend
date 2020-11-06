@@ -2,7 +2,7 @@ package com.yuepaijie.model.vo.page;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.google.common.collect.Lists;
-import com.yuepaijie.constants.View;
+import com.yuepaijie.constants.constvals.View;
 import java.util.List;
 import lombok.Data;
 

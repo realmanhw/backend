@@ -1,4 +1,4 @@
-package com.yuepaijie.constants;
+package com.yuepaijie.constants.constvals;
 
 public class View {
 

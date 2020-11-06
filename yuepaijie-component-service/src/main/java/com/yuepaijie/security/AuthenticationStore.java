@@ -16,8 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
-import static com.yuepaijie.constants.RedisKeys.TICKET_DICT_KEY;
-import static com.yuepaijie.constants.RedisKeys.USER_DETAIL_PREFIX;
+import static com.yuepaijie.constants.constvals.RedisKeys.TICKET_DICT_KEY;
+import static com.yuepaijie.constants.constvals.RedisKeys.USER_DETAIL_PREFIX;
 
 @Slf4j
 @Component

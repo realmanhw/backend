@@ -1,7 +1,7 @@
 package com.yuepaijie.model.vo;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.yuepaijie.constants.View;
+import com.yuepaijie.constants.constvals.View;
 import com.yuepaijie.constants.enums.Status;
 import lombok.Data;
 

@@ -59,7 +59,7 @@ public class ImgFileController {
     return RestEntity.ok();
   }
 
-  @ApiOperation(value = "删除相册--todo")
+  @ApiOperation(value = "删除相册")
   @PostMapping("/deleteAlbum/{albumId}")
   public RestEntity deleteAlbum(@PathVariable(name = "albumId") Long albumId) {
     if (!AuthUtils.isLogin()) {

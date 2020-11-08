@@ -1,7 +1,7 @@
 package com.yuepaijie.dao.impls;
 
 import com.mysql.cj.util.StringUtils;
-import com.yuepaijie.dao.generated.UserMapper;
+import com.yuepaijie.dao.mapper.generated.UserMapper;
 import com.yuepaijie.dao.interfaces.UserDao;
 import com.yuepaijie.kit.TimeUtils;
 import com.yuepaijie.model.entity.generated.User;

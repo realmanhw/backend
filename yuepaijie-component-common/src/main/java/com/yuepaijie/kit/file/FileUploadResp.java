@@ -10,6 +10,12 @@ import lombok.Data;
 @AllArgsConstructor
 public class FileUploadResp {
 
-  private String name;
+  private String title;
+  private String uri;
   private String url;
+
+  public FileUploadResp(String targetName, String uri){
+    this.title = targetName;
+    this.uri = uri;
+  }
 }

@@ -1,6 +1,6 @@
 package com.yuepaijie.dao.impls;
 
-import com.yuepaijie.dao.generated.UserAuthMapper;
+import com.yuepaijie.dao.mapper.generated.UserAuthMapper;
 import com.yuepaijie.dao.interfaces.UserAuthDao;
 import com.yuepaijie.kit.TimeUtils;
 import com.yuepaijie.kit.encryption.CredentialUtils;

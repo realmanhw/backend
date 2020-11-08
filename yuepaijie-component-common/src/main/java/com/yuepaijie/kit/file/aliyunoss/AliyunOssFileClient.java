@@ -4,13 +4,17 @@ import com.aliyun.oss.ClientException;
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.OSSException;
+import com.aliyun.oss.model.DeleteObjectsRequest;
+import com.aliyun.oss.model.DeleteObjectsResult;
 import com.aliyun.oss.model.OSSObject;
 import com.aliyun.oss.model.PutObjectRequest;
+import com.yuepaijie.constants.constvals.OssKeys;
 import com.yuepaijie.kit.file.FileUploadResp;
 import com.yuepaijie.kit.file.FileUtil;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -37,24 +41,14 @@ public class AliyunOssFileClient {
     }
   }
 
-  public FileUploadResp uploadPublic(MultipartFile file, String targetLocation, String targetName) throws IOException {
-    return upload(file.getInputStream(), ossClientConfig.getBucketNamePublic(), targetLocation, targetName);
+  public FileUploadResp uploadPublic(MultipartFile file, String targetLocation, String title) throws IOException {
+    FileUploadResp resp = upload(file.getInputStream(), ossClientConfig.getBucketNamePublic(), targetLocation, title);
+    resp.setUrl(OssKeys.YUEPAIJIE_HONKONG_PUBLIC+resp.getUri());
+    return resp;
   }
 
-  public byte[] downloadPublic(String uri) throws IOException {
-    return download(ossClientConfig.getBucketNamePublic(), uri);
-  }
-
-  public FileUploadResp uploadPrivate(MultipartFile file, String targetLocation, String targetName) throws IOException {
-    return upload(file.getInputStream(), ossClientConfig.getBucketNamePrivate(), targetLocation, targetName);
-  }
-
-  public byte[] downloadPrivate(String uri) throws IOException {
-    return download(ossClientConfig.getBucketNamePrivate(), uri);
-  }
-
-  public FileUploadResp upload(InputStream inputStream, String bucketName, String targetLocation, String targetName) {
-    String uri = FileUtil.generateUploadPath(targetLocation, targetName);
+  public FileUploadResp upload(InputStream inputStream, String bucketName, String targetLocation, String title) {
+    String uri = FileUtil.generateUploadPath(targetLocation, title);
     try {
       PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, uri, inputStream);
       ossClient.putObject(putObjectRequest);
@@ -62,7 +56,11 @@ public class AliyunOssFileClient {
       log.error("upload failed:{}", e.getMessage(), e);
       throw e;
     }
-    return new FileUploadResp(targetName, uri);
+    return new FileUploadResp(title, uri);
+  }
+
+  public byte[] downloadPublic(String uri) throws IOException {
+    return download(ossClientConfig.getBucketNamePublic(), uri);
   }
 
   public byte[] download(String bucketName, String uri) throws IOException {
@@ -76,5 +74,15 @@ public class AliyunOssFileClient {
     }
     objectContent.close();
     return outputStream.toByteArray();
+  }
+
+  public void deletePublic(String uri){
+    ossClient.deleteObject(ossClientConfig.getBucketNamePublic(),uri);
+  }
+
+  public List<String> deleteBatchPublic(List<String> uriList){
+    DeleteObjectsResult deleteObjectsResult = ossClient.deleteObjects(new DeleteObjectsRequest(ossClientConfig.getBucketNamePublic()).withKeys(uriList));
+    List<String> deletedObjects = deleteObjectsResult.getDeletedObjects();
+    return deletedObjects;
   }
 }

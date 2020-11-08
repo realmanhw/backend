@@ -45,7 +45,7 @@
 
         <!-- targetPackage 和 targetProject：生成的 interface 文件的包和位置 -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.yuepaijie.dao.generated" targetProject="./src/main/java">
+                             targetPackage="com.yuepaijie.dao.mapper.generated" targetProject="./src/main/java">
             <!-- 针对 oracle 数据库的一个配置，是否把 schema 作为字包名 -->
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
@@ -65,9 +65,6 @@
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
         <table tableName="gallery_image" domainObjectName="GalleryImage">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-        </table>
-        <table tableName="gallery_user_album_rel" domainObjectName="GalleryUserAlbumRel">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
         <table tableName="gallery_album_image_rel" domainObjectName="GalleryAlbumImageRel">

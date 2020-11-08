@@ -50,7 +50,8 @@ public class AliyunOssTest {
 
   @Test
   public void testoss1() throws IOException {
-    aliyunOssFileClient.downloadPublic("11");
-    System.out.println("11");
+    aliyunOssFileClient.deletePublic("3212/s300 (1).png");
+    aliyunOssFileClient.deletePublic("3212/");
+    System.out.println("ennnddddd666666");
   }
 }

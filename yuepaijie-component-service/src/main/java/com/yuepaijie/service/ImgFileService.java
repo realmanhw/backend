@@ -82,7 +82,7 @@ public class ImgFileService {
       FileUploadResp resp = aliyunOssFileClient.uploadPublic(file,targetLocation,title);
       String uri = resp.getUri();
       String url = resp.getUrl();
-      createGalleryImage(galleryImage, title, uri, url, md5, size, width, height);
+      createGalleryImage(galleryImage, title, uri, url, md5, size, width, height, album.getIsPrivate());
       Integer res = galleryImageDao.insertSelective(galleryImage);
       if(res.equals(0)){
         return false;
@@ -107,7 +107,7 @@ public class ImgFileService {
 
   private void createGalleryImage(GalleryImage galleryImage,
       String title, String uri, String url, String md5, Long size,
-      Integer width, Integer height) {
+      Integer width, Integer height, Boolean isPrivate) {
     galleryImage.setTitle(title);
     galleryImage.setUri(uri);
     galleryImage.setUrl(url);
@@ -115,6 +115,7 @@ public class ImgFileService {
     galleryImage.setSize(size);
     galleryImage.setWidth(width);
     galleryImage.setHeight(height);
+    galleryImage.setIsPrivate(isPrivate);
     galleryImage.setCreatetime(TimeUtils.getNow());
     galleryImage.setUpdatetime(TimeUtils.getNow());
   }
@@ -123,7 +124,6 @@ public class ImgFileService {
   public Boolean deleteAlbum(Long albumId){
     List<Long> imageIdList = galleryAlbumImageRelDao.getImageListByAlbumId(albumId);
     if(CollectionUtils.isEmpty(imageIdList)){
-      //TODO 这里要改一下，即使相册里面没有任何照片，也要把相册删掉哈~~
       //删除oss中的相册目录
       GalleryAlbum galleryAlbum = galleryAlbumDao.selectByPrimaryKey(albumId);
       if(galleryAlbum==null){

@@ -46,6 +46,9 @@ public class ImgFileController {
     if (StringKit.containsSpecialChar(albumParam.getTitle().trim())) {
       return RestEntity.error(Status.PARAMETER_ERROR.getStatus(), "相册不能包含特殊字符");
     }
+    if(albumParam.getIsPrivate() == null){
+      return RestEntity.error(Status.PARAMETER_ERROR);
+    }
     if (albumParam.getIsEncryption() == null) {
       return RestEntity.error(Status.PARAMETER_ERROR);
     }

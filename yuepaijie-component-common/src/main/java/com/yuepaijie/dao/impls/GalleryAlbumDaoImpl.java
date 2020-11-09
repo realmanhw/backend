@@ -19,6 +19,7 @@ public class GalleryAlbumDaoImpl implements GalleryAlbumDao {
     galleryAlbum.setUserId(uesrId);
     galleryAlbum.setTitle(albumParam.getTitle().trim());
     galleryAlbum.setDescription(albumParam.getDescription());
+    galleryAlbum.setIsPrivate(albumParam.getIsPrivate());
     galleryAlbum.setIsEncryption(albumParam.getIsEncryption());
     galleryAlbum.setPassword(albumParam.getPassword());
     galleryAlbum.setCreatetime(TimeUtils.getNow());

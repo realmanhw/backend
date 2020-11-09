@@ -123,7 +123,17 @@ public class ImgFileService {
   public Boolean deleteAlbum(Long albumId){
     List<Long> imageIdList = galleryAlbumImageRelDao.getImageListByAlbumId(albumId);
     if(CollectionUtils.isEmpty(imageIdList)){
-      return false;
+      //TODO 这里要改一下，即使相册里面没有任何照片，也要把相册删掉哈~~
+      //删除oss中的相册目录
+      GalleryAlbum galleryAlbum = galleryAlbumDao.selectByPrimaryKey(albumId);
+      if(galleryAlbum==null){
+        return true;
+      }
+      String albumUri = galleryAlbum.getUri();
+      aliyunOssFileClient.deletePublic(albumUri);
+      //删除galleryAlbum表中的记录
+      galleryAlbumDao.deleteById(albumId);
+      return true;
     }
     GalleryImageExample galleryImageExample = new GalleryImageExample();
     galleryImageExample.createCriteria().andIdIn(imageIdList);

@@ -12,7 +12,7 @@
 
 其中file app用的是阿里云Oss作为图床；
 
-目前项目配置了swagger，springSecurity，redis，mysql，下划线格式参数自动转驼峰格式的拦截器，有待配置Apollo
+目前项目配置了swagger，spring security，redis，mysql，mybatis generator, 下划线格式参数自动转驼峰格式的拦截器，有待配置Apollo
 
 **项目目前实现功能：**
 
